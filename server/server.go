@@ -1,5 +1,3 @@
-// +build OMIT
-
 // The server program issues Google search requests and demonstrates the use of
 // the go.net Context API. It serves on port 8080.
 //
@@ -14,12 +12,12 @@ package main
 
 import (
 	"context"
+	"github.com/zsuzhengdu/playground/userip"
+	"github.com/zsuzhengdu/playground/google"
 	"html/template"
 	"log"
 	"net/http"
 	"time"
-	"bitbucket.ciena.com/dzheng/playground/userip"
-	"bitbucket.ciena.com/dzheng/playground/google"
 )
 
 func main() {
@@ -46,7 +44,7 @@ func handleSearch(w http.ResponseWriter, req *http.Request) {
 	} else {
 		ctx, cancel = context.WithCancel(context.Background())
 	}
-	defer cancel() // Cancel ctx as soona as handleSearch returns.
+	defer cancel() // Cancel ctx as soon as handleSearch returns.
 
 	// Check the search query.
 	query := req.FormValue("q")
