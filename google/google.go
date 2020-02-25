@@ -8,13 +8,13 @@
 //
 // Google has since disabled its search API,
 // and so this package is no longer useful.
-package playground
+package google
 
 import (
 	"context"
 	"encoding/json"
 	"net/http"
-	"bitbucket.ciena.com/dzheng/playground/userip"
+	"./userip"
 )
 
 // Results is an ordered list of search results.

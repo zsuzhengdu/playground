@@ -3,7 +3,7 @@
 //
 // This package is an example to accompany https://blog.golang.org/context.
 // It is not intended for use by others.
-package playground
+package userip
 
 import (
 	"context"
